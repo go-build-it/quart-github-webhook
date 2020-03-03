@@ -1,0 +1,15 @@
+flake8_task:
+  container:
+    image: python:3
+  setup_script:
+    - pip install flake8
+  script:
+    - flake8
+
+test_task:
+  container:
+    image: python:3
+  setup_script:
+    - pip install -r requirements-test.txt
+  script:
+    - pytest

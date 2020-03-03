@@ -10,7 +10,6 @@ setup(
     license="Apache 2.0",
     packages=["quart_github_webhook"],
     install_requires=["quart"],
-    tests_require=["mock", "pytest", "nose", "pytest-asyncio"],
     classifiers=[
         "Development Status :: 4 - Beta",
         "Framework :: Quart",
@@ -24,5 +23,4 @@ setup(
         "Programming Language :: Python :: 3",
         "Topic :: Software Development :: Version Control",
     ],
-    test_suite="nose.collector",
 )
