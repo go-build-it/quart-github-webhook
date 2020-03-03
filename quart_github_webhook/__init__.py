@@ -4,6 +4,7 @@
 
     Very simple, but powerful, microframework for writing Github webhooks in Python.
 
+    :copyright: (c) 2020 by Go Build It, LLC
     :copyright: (c) 2016 by Bloomberg Finance L.P.
     :license: Apache License, Version 2.0
 """
@@ -11,6 +12,7 @@
 from github_webhook.webhook import Webhook  # noqa
 
 # -----------------------------------------------------------------------------
+# Copyright 2020 Go Build It, LLC
 # Copyright 2015 Bloomberg Finance L.P.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");

@@ -1,4 +1,4 @@
-Welcome to python-github-webhook's documentation!
+Welcome to quart-github-webhook's documentation!
 =================================================
 
 Very simple, but powerful, microframework for writing Github webhooks in Python.
@@ -6,12 +6,12 @@ Very simple, but powerful, microframework for writing Github webhooks in Python.
 .. code-block:: python
 
   from github_webhook import Webhook
-  from flask import Flask
+  from quart import Quart
   
-  app = Flask(__name__)  # Standard Flask app
+  app = Quart(__name__)  # Standard Quart app
   webhook = Webhook(app) # Defines '/postreceive' endpoint
   
-  @app.route("/")        # Standard Flask endpoint
+  @app.route("/")        # Standard Quart endpoint
   def hello_world():
       return "Hello, World!"
   

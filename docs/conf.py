@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# python-github-webhook documentation build configuration file, created by
+# quart-github-webhook documentation build configuration file, created by
 # sphinx-quickstart on Tue Mar  1 19:58:13 2016.
 #
 # This file is execfile()d with the current directory set to its
@@ -48,7 +48,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'python-github-webhook'
+project = 'quart-github-webhook'
 copyright = '2016, Bloomberg LP'
 author = 'Bloomberg LP'
 
@@ -204,7 +204,7 @@ html_sidebars = {
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'python-github-webhookdoc'
+htmlhelp_basename = 'quart-github-webhookdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -226,7 +226,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'python-github-webhook.tex', 'python-github-webhook Documentation',
+    (master_doc, 'quart-github-webhook.tex', 'quart-github-webhook Documentation',
      'Bloomberg LP', 'manual'),
 ]
 
@@ -256,7 +256,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'python-github-webhook', 'python-github-webhook Documentation',
+    (master_doc, 'quart-github-webhook', 'quart-github-webhook Documentation',
      [author], 1)
 ]
 
@@ -270,8 +270,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'python-github-webhook', 'python-github-webhook Documentation',
-     author, 'python-github-webhook', 'One line description of project.',
+    (master_doc, 'quart-github-webhook', 'quart-github-webhook Documentation',
+     author, 'quart-github-webhook', 'One line description of project.',
      'Miscellaneous'),
 ]
 
