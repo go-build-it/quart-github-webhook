@@ -10,6 +10,6 @@ test_task:
   container:
     image: python:3
   setup_script:
-    - pip install -r requirements-test.txt
+    - pip install -r requirements-tests.txt
   script:
     - pytest
