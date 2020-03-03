@@ -4,7 +4,7 @@ flake8_task:
   setup_script:
     - pip install flake8
   script:
-    - flake8
+    - flake8 quart_github_webhook
 
 test_task:
   container:
