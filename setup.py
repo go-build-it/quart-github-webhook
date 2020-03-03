@@ -10,7 +10,7 @@ setup(
     license="Apache 2.0",
     packages=["quart_github_webhook"],
     install_requires=["quart"],
-    tests_require=["mock", "pytest"],
+    tests_require=["mock", "pytest", "nose"],
     classifiers=[
         "Development Status :: 4 - Beta",
         "Framework :: Quart",

@@ -1,4 +1,4 @@
-"""Tests for github_webhook.webhook"""
+"""Tests for quart_github_webhook.webhook"""
 
 from __future__ import print_function
 
@@ -11,12 +11,12 @@ try:
 except ImportError:
     import mock
 
-from github_webhook.webhook import Webhook
+from quart_github_webhook.webhook import Webhook
 
 
 @pytest.fixture
 def mock_request():
-    with mock.patch("github_webhook.webhook.request") as req:
+    with mock.patch("quart_github_webhook.webhook.request") as req:
         req.headers = {"X-Github-Delivery": ""}
         yield req
 
@@ -116,7 +116,7 @@ def test_can_handle_zero_events(webhook, push_request):
 
 
 @pytest.mark.parametrize("secret", [u"secret", b"secret"])
-@mock.patch("github_webhook.webhook.hmac")
+@mock.patch("quart_github_webhook.webhook.hmac")
 def test_calls_if_signature_is_correct(mock_hmac, app, push_request, secret):
     # GIVEN
     webhook = Webhook(app, secret=secret)
@@ -133,7 +133,7 @@ def test_calls_if_signature_is_correct(mock_hmac, app, push_request, secret):
     handler.assert_called_once_with(push_request.get_json.return_value)
 
 
-@mock.patch("github_webhook.webhook.hmac")
+@mock.patch("quart_github_webhook.webhook.hmac")
 def test_does_not_call_if_signature_is_incorrect(mock_hmac, app, push_request):
     # GIVEN
     webhook = Webhook(app, secret="super_secret")
@@ -164,6 +164,7 @@ def test_request_had_headers(webhook, handler, mock_request):
 
 
 # -----------------------------------------------------------------------------
+# Copyright 2020 Go Build It, LLC
 # Copyright 2015 Bloomberg Finance L.P.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");

@@ -5,7 +5,7 @@ Very simple, but powerful, microframework for writing Github webhooks in Python.
 
 .. code-block:: python
 
-  from github_webhook import Webhook
+  from quart_github_webhook import Webhook
   from quart import Quart
   
   app = Quart(__name__)  # Standard Quart app

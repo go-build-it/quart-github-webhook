@@ -1,6 +1,6 @@
 """
-    github_webhook
-    ~~~~~~~~~~~~~~
+    quart_github_webhook
+    ~~~~~~~~~~~~~~~~~~~~
 
     Very simple, but powerful, microframework for writing Github webhooks in Python.
 
@@ -9,7 +9,9 @@
     :license: Apache License, Version 2.0
 """
 
-from github_webhook.webhook import Webhook  # noqa
+from .webhook import Webhook
+
+__all__ = ('Webhook',)
 
 # -----------------------------------------------------------------------------
 # Copyright 2020 Go Build It, LLC

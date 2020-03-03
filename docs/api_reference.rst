@@ -4,5 +4,5 @@ API Reference
 .. contents:: Contents
    :local:
 
-.. autoclass:: github_webhook.Webhook
+.. autoclass:: quart_github_webhook.Webhook
    :members:

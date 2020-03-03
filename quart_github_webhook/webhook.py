@@ -127,6 +127,7 @@ def _format_event(event_type, data):
 
 
 # -----------------------------------------------------------------------------
+# Copyright 2020 Go Build It, LLC
 # Copyright 2015 Bloomberg Finance L.P.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");

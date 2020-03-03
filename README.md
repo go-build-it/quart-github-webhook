@@ -13,7 +13,7 @@ orginally developed for Bloomberg's GHE install.
 receives push events all it takes is:
 
 ```py
-from github_webhook import Webhook
+from quart_github_webhook import Webhook
 from quart import Quart
 
 app = Quart(__name__)  # Standard Flask app
