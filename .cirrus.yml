@@ -11,5 +11,6 @@ test_task:
     image: python:3
   setup_script:
     - pip install -r requirements-tests.txt
+    - pip install .
   script:
     - pytest
