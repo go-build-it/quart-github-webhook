@@ -24,7 +24,7 @@ class Webhook(object):
             secret = secret.encode("utf-8")
         self._secret = secret
 
-    def hook(self, event_type="push"):
+    def hook(self, event_type):
         """
         Registers a function as a hook. Multiple hooks can be registered for a given type, but the
         order in which they are invoke is unspecified.
@@ -58,14 +58,18 @@ class Webhook(object):
 
         event_type = _get_header("X-Github-Event")
         content_type = _get_header("content-type")
-        data = (
-            json.loads(request.form.to_dict(flat=True)["payload"])
-            if content_type == "application/x-www-form-urlencoded"
-            else request.get_json()
-        )
+        print(content_type, await request.data, await request.form)
+        if content_type == "application/x-www-form-urlencoded":
+            formdata = (await request.form).to_dict(flat=True)
+            print(formdata)
+            data = json.loads(formdata["payload"])
+        elif content_type == "application/json":
+            data = await request.get_json()
+        else:
+            abort(415, f"Unknown content type {content_type}")
 
         if data is None:
-            abort(400, "Request body must contain json")
+            abort(400, "Request body must contain data")
 
         self._logger.info("%s (%s)", _format_event(event_type, data), _get_header("X-Github-Delivery"))
 
