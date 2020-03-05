@@ -14,7 +14,7 @@ setup(
     install_requires=["quart"],
     classifiers=[
         "Development Status :: 4 - Beta",
-        "Framework :: Quart",
+        # "Framework :: Quart",
         "Environment :: Web Environment",
         "Intended Audience :: Developers",
         "Intended Audience :: System Administrators",
