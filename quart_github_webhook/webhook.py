@@ -65,10 +65,8 @@ class Webhook(object):
 
         event_type = _get_header("X-Github-Event")
         content_type = _get_header("content-type")
-        print(content_type, await request.data, await request.form)
         if content_type == "application/x-www-form-urlencoded":
             formdata = (await request.form).to_dict(flat=True)
-            print(formdata)
             data = json.loads(formdata["payload"])
         elif content_type == "application/json":
             data = await request.get_json()
