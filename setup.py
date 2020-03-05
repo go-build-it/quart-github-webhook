@@ -2,7 +2,9 @@ from setuptools import setup
 
 setup(
     name="quart-github-webhook",
-    version="1.0.3",
+    use_scm_version={
+        'local_scheme': 'dirty-tag',
+    },
     description="Very simple, but powerful, microframework for writing Github webhooks in Python",
     url="https://github.com/go-build-it/quart-github-webhook",
     author="Jamie Bliss",
