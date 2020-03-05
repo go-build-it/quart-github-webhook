@@ -40,16 +40,16 @@ class Webhook(object):
 
         return decorator
 
-    def _get_digest(self):
+    async def _get_digest(self):
         """Return message digest if a secret key was provided"""
 
         if self._secret:
-            return hmac.new(self._secret, request.data, hashlib.sha1).hexdigest()
+            return hmac.new(self._secret, await request.data, hashlib.sha1).hexdigest()
 
     async def _postreceive(self):
         """Callback from Flask"""
 
-        digest = self._get_digest()
+        digest = await self._get_digest()
 
         if digest is not None:
             sig_parts = _get_header("X-Hub-Signature").split("=", 1)
