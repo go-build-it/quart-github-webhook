@@ -3,6 +3,7 @@ import hashlib
 import hmac
 import logging
 import json
+import asyncio
 from quart import abort, request
 
 
@@ -35,6 +36,9 @@ class Webhook(object):
         """
 
         def decorator(func):
+            if not asyncio.iscoroutinefunction(func):
+                raise ValueError("Webhook callback for '{0}' must be marked 'async'".format(event_type))
+                
             self._hooks[event_type].append(func)
             return func
 
