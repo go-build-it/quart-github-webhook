@@ -16,15 +16,18 @@ receives push events all it takes is:
 from quart_github_webhook import Webhook
 from quart import Quart
 
-app = Quart(__name__)  # Standard Flask app
-webhook = Webhook(app) # Defines '/postreceive' endpoint
+app = Quart(__name__)  # Standard Flask app, using Quart
+
+# Defines the '/postreceive' endpoint
+# you can also specify here: a github secret token, or a different endpoint URL
+webhook = Webhook(app)
 
 @app.route("/")        # Standard Flask endpoint
 async def hello_world():
     return "Hello, World!"
 
-@webhook.hook()        # Defines a handler for the 'push' event
-async def on_push(data):
+@webhook.hook("push")        # Defines a handler for the 'push' event
+async def on_push_event_receieved(data):
     print("Got push with: {0}".format(data))
 
 if __name__ == "__main__":

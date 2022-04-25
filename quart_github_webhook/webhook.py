@@ -17,7 +17,7 @@ class Webhook(object):
 
     def __init__(self, app, endpoint="/postreceive", secret=None):
         app.add_url_rule(
-            path=endpoint, endpoint=endpoint, view_func=self._postreceive, methods=["POST"],
+            rule=endpoint, endpoint=endpoint, view_func=self._postreceive, methods=["POST"],
         )
 
         self._hooks = collections.defaultdict(list)
